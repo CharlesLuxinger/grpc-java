@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  mongo.p2p-charge.dev:
+    container_name: mongo.grpc-java.dev
+    image: mongo:4.2.7
+    networks:
+      - bubble
+    ports:
+      - "27017:27017"
+    volumes:
+      - db:/data/db
+
+networks:
+  bubble:
+    external: true
+
+volumes:
+  db:

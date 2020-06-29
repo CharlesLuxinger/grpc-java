@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package greet;
+
+option java_package = "com.charlesluxinger.grpc";
+option java_multiple_files = true;
+
+message Greeting {
+  string first_name = 1;
+  string last_name = 2;
+}
+
+message GreetWithSecurityRequest {
+  Greeting greeting = 1;
+}
+
+message GreetWithSecurityResponse {
+  string result = 1;
+}
+
+service GreetWithSecurityService {
+  rpc GreetWithSecurity(GreetWithSecurityRequest) returns (GreetWithSecurityResponse) {};
+}

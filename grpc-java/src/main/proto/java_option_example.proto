@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package example.simple;
+
+option java_package = "com.charlesluxinger.grpc";
+option java_multiple_files = true;
+
+message OptionMessageTest {
+  int32 id = 1;
+  bool is_simple = 2;
+  string name = 3;
+  repeated int32 sample_list = 4;
+}
+
+message OptionMessageTestOther {
+  int32 id = 1;
+  bool is_simple = 2;
+  string name = 3;
+  repeated int32 sample_list = 4;
+}

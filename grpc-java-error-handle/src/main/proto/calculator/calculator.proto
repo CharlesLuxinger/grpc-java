@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package greet;
+
+option java_package = "com.charlesluxinger.grpc";
+option java_multiple_files = true;
+
+message SquareRootRequest {
+  int32 number = 1;
+}
+
+message SquareRootResponse {
+  double number_root = 1;
+}
+
+service CalculatorService {
+  rpc SquareRoot(SquareRootRequest) returns (SquareRootResponse) {};
+}
